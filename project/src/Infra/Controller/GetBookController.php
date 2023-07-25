@@ -13,14 +13,16 @@ class GetBookController extends AbstractController
 {
     use SerializerTrait;
 
+    /**
+     * @param GetBookHandler $bookHandler
+     */
     public function __construct(protected GetBookHandler $bookHandler)
     {
     }
 
     #[Route('/get/book', name: 'app_get_book')]
-    public function __invoke(SerializerInterface $serializer): JsonResponse
+        public function __invoke(SerializerInterface $serializer): JsonResponse
     {
-
         try {
             $books = $this->bookHandler->handle();
             return new JsonResponse($this->serialize($books, $serializer), 200, [], true);

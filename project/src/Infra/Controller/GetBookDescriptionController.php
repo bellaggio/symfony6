@@ -13,6 +13,9 @@ class GetBookDescriptionController extends AbstractController
 {
     use SerializerTrait;
 
+    /**
+     * @param GetBookDescriptionHandler $bookDescriptionHandler
+     */
     public function __construct(protected GetBookDescriptionHandler $bookDescriptionHandler)
     {
     }
