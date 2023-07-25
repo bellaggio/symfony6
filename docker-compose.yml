@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./project:/opt/projects/project
+      - ./docker/nginx/project.conf:/etc/nginx/conf.d/project.conf
+    links:
+      - php8
+    networks:
+      - test
+  php8:
+    container_name: php82
+    build:
+      context: ./docker/php8
+    depends_on:
+      - mysqldb
+    ports:
+      - 9001:9000
+    volumes:
+      - ./project:/opt/projects/project
+      - ./docker/php8/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./docker/php8/my-config.ini:/usr/local/etc/php/conf.d/my-config.ini
+    links:
+      - mysqldb
+    networks:
+      - test
+  mysqldb:
+    container_name: mysql
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password --sql_mode=''
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: 123456
+        MYSQL_USER: project
+        MYSQL_PASSWORD: 123456
+    volumes:
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - test
+
+networks:
+  test:

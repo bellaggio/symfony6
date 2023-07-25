@@ -1,0 +1,15 @@
+controllers:
+    resource:
+        path: ../src/Infra/Controller/
+        namespace: App\Controller
+    type: attribute
+
+get_book_description:
+    path:       /get/description/{id}
+    controller: App\Infra\Controller\GetBookDescriptionController
+    methods: GET
+
+get_book:
+    path:       /get/book
+    controller: App\Infra\Controller\GetBookController
+    methods: GET
