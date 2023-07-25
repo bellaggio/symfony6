@@ -54,7 +54,7 @@ cd project && composer phpunit
 ```
 
 ### Backend details
-* [Symfony](https://symfony.com/releases/6.3)) - Framework
+* [Symfony](https://symfony.com/releases/6.3) - Framework
 * Docker
 * PHP8.2
 * [CaptainHook](https://github.com/captainhookphp/captainhook) - Hook pre-commit
