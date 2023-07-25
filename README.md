@@ -29,10 +29,10 @@ After docker up correctly and project composer installed correctly
 
 ### Frontend installation
 
-to get up vue application, go to the vue-project folder and run
+to get up vue application
 
 ```bash
-npm install
+cd vue-project && npm install
 ```
 
 to run the application 
