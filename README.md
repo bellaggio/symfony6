@@ -8,7 +8,7 @@ Foobar is a Python library for dealing with word pluralization.
 1. To get up the containers
 
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 2. To check if docker is up correctly
 
