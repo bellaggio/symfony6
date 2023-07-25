@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "c5b9a419-7db7-464c-8b2d-920747293c04",
+		"name": "TEST SF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8015179",
+		"_collection_link": "https://winter-moon-149123.postman.co/workspace/Testes~fb5d84e4-1848-4c29-96e5-13c87ef44856/collection/8015179-c5b9a419-7db7-464c-8b2d-920747293c04?action=share&creator=8015179&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "GET BOOK DESCRIPTION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body has response description\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"description\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/get/description/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get",
+						"description",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BOOK LIST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body has response title\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"title\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/get/book",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"get",
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
