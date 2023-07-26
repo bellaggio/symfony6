@@ -1,8 +1,6 @@
 # Hansecom - sf test
 
 
-Foobar is a Python library for dealing with word pluralization.
-
 ## Installation
 ### Backend installation
 1. To get up the containers
