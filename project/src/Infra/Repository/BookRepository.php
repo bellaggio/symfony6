@@ -4,7 +4,6 @@ namespace App\Infra\Repository;
 
 use App\Core\Adapters\BookRespositoryInterface;
 use App\Infra\Entity\BookEntity;
-use App\Infra\Helper\SerializerTrait;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -18,7 +17,9 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BookRepository extends ServiceEntityRepository implements BookRespositoryInterface
 {
-
+    /**
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, BookEntity::class);

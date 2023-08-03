@@ -17,7 +17,8 @@ class GetBookDescriptionHandler
      * @param int $bookId
      * @return array
      */
-    public function handle(int $bookId):array{
+    public function handle(int $bookId):array
+    {
         return $this->repository->getBookDescription($bookId);
     }
 }

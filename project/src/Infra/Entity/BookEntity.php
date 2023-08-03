@@ -120,7 +120,7 @@ class BookEntity
     /**
      * @return mixed
      */
-    public function getDescription()
+    public function getDescription():mixed
     {
         return $this->description;
     }

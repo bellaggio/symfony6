@@ -12,7 +12,8 @@ trait SerializerTrait
      * @param SerializerInterface $serializer
      * @return string
      */
-    public function serialize($data, SerializerInterface $serializer):string{
+    public function serialize($data, SerializerInterface $serializer):string
+    {
         return $serializer->serialize($data, 'json', [
             AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object) {
                 return $object->getId();

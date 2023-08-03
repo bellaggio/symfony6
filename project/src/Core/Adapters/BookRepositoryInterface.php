@@ -2,7 +2,7 @@
 
 namespace App\Core\Adapters;
 
-interface BookRespositoryInterface
+interface BookRepositoryInterface
 {
     public function getBook(int $id = null):array;
 }

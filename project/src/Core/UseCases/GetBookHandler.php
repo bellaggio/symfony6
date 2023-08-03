@@ -1,20 +1,21 @@
 <?php
 namespace App\Core\UseCases;
-use App\Core\Adapters\BookRespositoryInterface;
+use App\Core\Adapters\BookRepositoryInterface;
 
 class GetBookHandler
 {
     /**
-     * @param BookRespositoryInterface $repository
+     * @param BookRepositoryInterface $repository
      */
-    public function __construct(protected BookRespositoryInterface $repository)
+    public function __construct(protected BookRepositoryInterface $repository)
     {
     }
 
     /**
      * @return array
      */
-    public function handle():array{
+    public function handle():array
+    {
         return $this->repository->getBook();
     }
 }

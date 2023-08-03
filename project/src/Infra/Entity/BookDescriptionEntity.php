@@ -47,7 +47,7 @@ class BookDescriptionEntity
     /**
      * @return mixed
      */
-    public function getBook()
+    public function getBook():mixed
     {
         return $this->book;
     }
@@ -56,7 +56,7 @@ class BookDescriptionEntity
      * @param mixed $book
      * @return BookDescriptionEntity
      */
-    public function setBook($book)
+    public function setBook($book): BookDescriptionEntity
     {
         $this->book = $book;
         return $this;

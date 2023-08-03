@@ -9,7 +9,7 @@ trait EntityTimeStamp
      * Gets triggered only on insert
      * @ORM\PrePersist
      */
-    public function onPrePersist()
+    public function onPrePersist():void
     {
         $this->created_at = new \DateTime("now");
     }
@@ -18,7 +18,7 @@ trait EntityTimeStamp
      * Gets triggered every time on update
      * @ORM\PreUpdate
      */
-    public function onPreUpdate()
+    public function onPreUpdate():void
     {
         $this->updated_at = new \DateTime("now");
     }
